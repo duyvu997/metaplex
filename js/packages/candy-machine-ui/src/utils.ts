@@ -21,7 +21,7 @@ export const toDate = (value?: anchor.BN) => {
   return new Date(value.toNumber() * 1000);
 };
 
-const numberFormater = new Intl.NumberFormat('en-US', {
+const numberFormatter = new Intl.NumberFormat('en-US', {
   style: 'decimal',
   minimumFractionDigits: 2,
   maximumFractionDigits: 2,
@@ -33,7 +33,7 @@ export const formatNumber = {
       return '--';
     }
 
-    return numberFormater.format(val);
+    return numberFormatter.format(val);
   },
   asNumber: (val?: anchor.BN) => {
     if (!val) {
